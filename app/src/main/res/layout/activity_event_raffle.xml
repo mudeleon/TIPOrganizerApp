@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <android.support.design.widget.CoordinatorLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#ededed"
+        >
+
+        <android.support.v4.widget.SwipeRefreshLayout
+            android:id="@+id/swipe_refresh_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+   <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:padding="5dp"
+            android:orientation="horizontal">
+
+
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:scaleType="centerCrop"
+                    android:background="@drawable/ic_raffle_prize"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:text="Prize"
+                    android:layout_marginLeft="3dp"
+                    android:textColor="@color/gray"
+                    android:textAppearance="@style/Base.TextAppearance.AppCompat.Large" />
+
+        </LinearLayout>
+
+
+       <android.support.v7.widget.RecyclerView
+                android:id="@+id/recycler_view"
+                android:layout_width="match_parent"
+                android:paddingRight="10dp"
+                android:background="#ededed"
+                android:layout_height="wrap_content" />
+
+
+       <LinearLayout
+           android:layout_width="match_parent"
+           android:layout_height="45dp"
+           android:padding="5dp"
+           android:layout_marginTop="13dp"
+           android:orientation="horizontal">
+
+
+           <ImageView
+               android:layout_width="40dp"
+               android:layout_height="40dp"
+               android:scaleType="centerCrop"
+               android:background="@drawable/ic_raffle_winner"
+               />
+
+           <TextView
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_gravity="center_vertical"
+               android:text="Winners"
+               android:layout_marginLeft="3dp"
+               android:textColor="@color/gray"
+               android:textAppearance="@style/Base.TextAppearance.AppCompat.Large" />
+
+       </LinearLayout>
+
+
+       <TextView
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:padding="30dp"
+           android:gravity="center"
+           android:text="No Raffle Winners"
+           android:textColor="@color/lightGray"
+           android:textStyle="bold"
+           android:id="@+id/rafflelist_no_recyclerView"
+           android:visibility="gone"
+           android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"/>
+
+
+
+       <android.support.v7.widget.RecyclerView
+           android:id="@+id/recycler_view2"
+           android:layout_width="match_parent"
+           android:paddingRight="10dp"
+           android:background="#ededed"
+           android:layout_height="wrap_content" />
+
+
+   </LinearLayout>
+
+
+
+
+
+        </android.support.v4.widget.SwipeRefreshLayout>
+
+        <nl.dionsegijn.konfetti.KonfettiView
+            android:id="@+id/viewKonfetti"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/attendeeScan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end"
+            app:fabSize="normal"
+            android:scaleType="center"
+            android:layout_margin="@dimen/activity_horizontal_margin"
+            app:srcCompat="@drawable/ic_raffle_dice" />
+
+    </android.support.design.widget.CoordinatorLayout>
+
+</layout>

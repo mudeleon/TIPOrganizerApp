@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <import type="sample.com.organizerapp.util.DateTimeUtils" />
+        <variable
+            name="view"
+            type="sample.com.organizerapp.ui.event.attendee.AttendeeView" />
+
+        <variable
+            name="profile"
+            type="sample.com.organizerapp.model.data.Attendee" />
+
+
+    </data>
+
+    <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent">
+
+        <android.support.v7.widget.CardView
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:foreground="?selectableItemBackground"
+            app:cardElevation="1dp"
+            app:cardCornerRadius="10dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="vertical"
+           >
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="240dp"
+                android:theme="@style/ThemeOverlay.AppCompat.Dark">
+
+
+
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="480dp"
+                    android:scaleType="centerCrop"
+                     />
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:minHeight="300dp"
+                    android:background="@color/colorPrimary"
+                    android:scaleType="centerCrop"
+                    />
+
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:orientation="vertical"
+                    android:paddingBottom="@dimen/activity_vertical_margin"
+                    android:paddingLeft="@dimen/activity_horizontal_margin"
+                    android:paddingRight="@dimen/activity_horizontal_margin"
+                    android:paddingTop="@dimen/activity_vertical_margin">
+
+                    <ImageView
+                        android:id="@+id/imageRunnerProfile"
+                        android:layout_width="150dp"
+                        android:layout_height="150dp"
+                        android:layout_gravity="center"
+                        android:paddingTop="@dimen/nav_header_vertical_spacing"
+                        android:src="@drawable/ic_profile_m" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:paddingTop="@dimen/nav_header_vertical_spacing"
+                        android:text="@{profile.fullName}"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Title" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="@{profile.emailAddress}"
+                        android:textAppearance="@style/Base.TextAppearance.AppCompat.Subhead" />
+
+
+                </LinearLayout>
+
+
+            </FrameLayout>
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/attendeeStatusDetailCard"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                app:cardBackgroundColor="@color/redFailedDark"
+                app:cardElevation="1dp"
+                android:layout_gravity="center"
+                app:cardCornerRadius="10dp">
+
+            <ImageView
+                android:id="@+id/attendeeStatusDetail"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_attendance_close"
+
+                /></android.support.v7.widget.CardView>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:gravity="center"
+                android:text="Attendance Status"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Caption" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:gravity="center"
+                android:text="@{profile.birthday}"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:gravity="center"
+                android:text="Birthday"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Caption" />
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:gravity="center"
+                android:text="@{profile.cpNumber}"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:gravity="center"
+                android:text="Contact"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Caption" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:gravity="center"
+                android:text="@{profile.address}"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:gravity="center"
+                android:text="Address"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Caption" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:gravity="center"
+                        android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="@drawable/button_rounded_primary"
+                android:gravity="center"
+                android:padding="10dp"
+                android:textAllCaps="true"
+                android:layout_margin="5dp"
+                android:clickable="true"
+                android:text="Mark as Attended"
+                android:textStyle="bold"
+                android:id="@+id/attendeeProfileMark"
+                android:textColor="@color/white"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="@drawable/button_rounded_red"
+                android:gravity="center"
+                android:padding="10dp"
+                android:layout_margin="5dp"
+                android:textAllCaps="true"
+                android:text="Close"
+                android:clickable="true"
+                android:textStyle="bold"
+                android:id="@+id/runnerProfileClose"
+                android:textColor="@color/white"
+                />
+                    </LinearLayout>
+                </LinearLayout>
+            </ScrollView>
+
+
+        </LinearLayout>
+   </android.support.v7.widget.CardView>
+    </FrameLayout>
+
+</layout>

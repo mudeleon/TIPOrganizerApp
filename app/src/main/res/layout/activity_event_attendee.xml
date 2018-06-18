@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <android.support.design.widget.CoordinatorLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#ededed"
+        >
+
+
+        <SearchView
+            android:id="@+id/searchView"
+            android:layout_width="match_parent"
+            android:layout_margin="5dp"
+            android:background="@drawable/bg_searchview"
+            android:iconifiedByDefault="false"
+            android:queryBackground="@android:color/transparent"
+            app:queryBackground="@android:color/transparent"
+            android:queryHint="Search Attendees"
+            android:layout_height="50dp"/>
+
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="60dp"
+            android:padding="10dp"
+            android:weightSum=".6"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight=".14"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Attendee:"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Small" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight=".05"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_marginLeft="8dp"
+                android:text="100"
+                android:id="@+id/attendee_total"
+                android:textStyle="bold"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Caption" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight=".13"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_marginLeft="20dp"
+                android:text="Present:"
+                android:textColor="@color/colorPrimaryDark"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Small" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight=".05"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_marginLeft="8dp"
+                android:text="100"
+                android:id="@+id/attendee_present"
+                android:textStyle="bold"
+                android:textColor="@color/colorPrimaryDark"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Caption" />
+
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight=".18"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Not Present:"
+                android:layout_marginLeft="20dp"
+                android:textColor="@color/redFailedDark"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Small" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight=".05"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_marginLeft="8dp"
+                android:text="100"
+                android:id="@+id/attendee_not_present"
+                android:textStyle="bold"
+                android:textColor="@color/redFailedDark"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Caption" />
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="100dp"
+            android:padding="30dp"
+            android:gravity="center"
+            android:text="No Attendee"
+            android:textColor="@color/lightGray"
+            android:textStyle="bold"
+            android:id="@+id/eventlist_no_recyclerView"
+            android:visibility="visible"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"/>
+
+
+
+        <android.support.v4.widget.SwipeRefreshLayout
+            android:id="@+id/swipe_refresh_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="100dp"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+
+
+
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/recycler_view"
+                android:layout_width="match_parent"
+                android:background="#ededed"
+                android:layout_height="match_parent" />
+
+        </android.support.v4.widget.SwipeRefreshLayout>
+
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/attendeeScan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end"
+            app:fabSize="normal"
+            android:scaleType="center"
+            android:layout_margin="@dimen/activity_horizontal_margin"
+            app:srcCompat="@drawable/ic_barcode_scan" />
+
+    </android.support.design.widget.CoordinatorLayout>
+
+</layout>
